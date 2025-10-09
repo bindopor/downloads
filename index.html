@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bindopor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f7f7;
+        --text: #1a1a1a;
+        --accent: #0d1f3c; /* dark blue accent */
+        --accent-light: #0077ff; /* for hover / lighter accent */
+        --radius: 12px;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #111111;
+          --text: #f0f0f0;
+          --accent: #0d1f3c;
+          --accent-light: #3399ff;
+        }
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      header img.logo {
+        height: 60px;
+        margin-bottom: 1rem;
+      }
+      header h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+      header p {
+        margin-top: 0.5rem;
+        opacity: 0.8;
+        font-size: 1rem;
+      }
+      .catalogs {
+        display: grid;
+        gap: 1.2rem;
+        width: 100%;
+        max-width: 500px;
+      }
+      .card {
+        background: white;
+        border-radius: var(--radius);
+        padding: 1.4rem;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      }
+      .card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+      .download-btn {
+        display: inline-block;
+        padding: 0.7rem 1.3rem;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: var(--radius);
+        transition: background 0.2s ease;
+      }
+      .download-btn:hover {
+        background: var(--accent-light);
+      }
+      footer {
+        margin-top: 3rem;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+   <header>
+  <a href="https://bindopor.com" target="_blank" rel="noopener noreferrer">
+    <img class="logo" src="Logo_Bindopor.svg" alt="Bindopor Logo" />
+  </a>
+</header>
+
+    <section class="catalogs">
+      <div class="card">
+        <h2>Portfolio</h2>
+        <a class="download-btn" href="portfolio.pdf" download>Download</a>
+      </div>
+      <div class="card">
+        <h2>Catalogue 2</h2>
+        <a class="download-btn" href="catalog2.pdf" download>Download</a>
+      </div>
+      <div class="card">
+        <h2>Catalogue 3</h2>
+        <a class="download-btn" href="catalog3.pdf" download>Download</a>
+      </div>
+      <div class="card">
+        <h2>Catalogue 4</h2>
+        <a class="download-btn" href="catalog4.pdf" download>Download</a>
+      </div>
+      <div class="card">
+        <h2>Catalogue 5</h2>
+        <a class="download-btn" href="catalog5.pdf" download>Download</a>
+      </div>
+    </section>
+
+    <footer>© 2025 Bindopor — All rights reserved</footer>
+  </body>
+</html>
