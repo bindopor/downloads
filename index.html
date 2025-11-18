@@ -112,7 +112,7 @@
      <section class="catalogs">
       <div class="card">
         <h2>Apresentação</h2>
-        <a class="download-btn" href="apresentacao.php">Download</a>
+        <a class="download-btn" href="Bindopor_Apresentação.pdf">Download</a>
       </div>
       <div class="card">
         <h2>Portfólio</h2>
@@ -125,8 +125,43 @@
     </section>
 
     <footer>© 2025 Bindopor — All rights reserved</footer>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all <a> tags where the link ends with .pdf
+    const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
+
+    pdfLinks.forEach(link => {
+        link.addEventListener("click", async (e) => {
+            e.preventDefault();
+
+            const url = link.getAttribute("href");
+            const filename = url.split("/").pop();
+
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                const blobUrl = URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = blobUrl;
+                a.download = filename;  // forces real download
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+
+                URL.revokeObjectURL(blobUrl);
+            } catch (err) {
+                console.error("Blob download failed:", err);
+                // fallback: normal PDF open
+                window.location.href = url;
+            }
+        });
+    });
+});
+</script>
   </body>
 </html>
+
 
 
 
